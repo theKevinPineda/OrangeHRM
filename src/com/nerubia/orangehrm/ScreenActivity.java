@@ -9,6 +9,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.actionbarsherlock.app.SherlockActivity;
 import com.nerubia.orangehrm.objects.NerubiaHRM;
 import com.nerubia.orangehrm.utilities.CommonUtilities;
 import com.nerubia.orangehrm.utilities.JsonClient;
@@ -24,7 +25,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class ScreenActivity extends Activity {
+public class ScreenActivity extends SherlockActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -34,10 +35,8 @@ public class ScreenActivity extends Activity {
 	}
 
 	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.activity_screen, menu);
-		return true;
+	public boolean onCreateOptionsMenu(com.actionbarsherlock.view.Menu menu) {
+		return super.onCreateOptionsMenu(menu);
 	}
 
 	private void initialize() {
