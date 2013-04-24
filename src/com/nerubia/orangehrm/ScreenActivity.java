@@ -9,6 +9,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.nerubia.orangehrm.objects.NerubiaHRM;
 import com.nerubia.orangehrm.utilities.CommonUtilities;
 import com.nerubia.orangehrm.utilities.JsonClient;
 
@@ -42,7 +43,6 @@ public class ScreenActivity extends Activity {
 	private void initialize() {
 		Button login = (Button) findViewById(R.id.loginButton);
 		login.setOnClickListener(new OnClickListener() {
-
 			@Override
 			public void onClick(View v) {
 				login();
@@ -74,10 +74,27 @@ public class ScreenActivity extends Activity {
 
 	public void storeInfo(JSONObject jsonObject) {
 		Toast.makeText(getBaseContext(), "Success", Toast.LENGTH_LONG).show();
+		NerubiaHRM app = (NerubiaHRM) getApplicationContext();
+		try {
+			app.initialize(jsonObject.getInt("id"),
+					jsonObject.getInt("emp_number"),
+					jsonObject.getString("user_name"),
+					jsonObject.getString("user_password"),
+					jsonObject.getInt("deleted"), jsonObject.getInt("status"),
+					jsonObject.getInt("created_by"));
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	public void alert() {
 		Toast.makeText(getBaseContext(), "Fail", Toast.LENGTH_LONG).show();
+	}
+
+	public void erasePassword() {
+		EditText ed = (EditText) findViewById(R.id.loginPassword);
+		ed.setText("");
 	}
 
 	protected class LoginWebTask extends AsyncTask<String, Void, Boolean> {
@@ -123,10 +140,12 @@ public class ScreenActivity extends Activity {
 		protected void onPostExecute(Boolean result) {
 			super.onPostExecute(result);
 			pd.dismiss();
-			if (result == true)
+			erasePassword();
+			if (result == true) {
 				storeInfo(jsonObject);
-			else
+			} else
 				alert();
+
 		}
 
 	}
