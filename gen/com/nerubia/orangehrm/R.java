@@ -917,9 +917,11 @@ containing a value of this type.
         public static final int abs__textfield_searchview_holo_light=0x7f02006c;
         public static final int abs__textfield_searchview_right_holo_dark=0x7f02006d;
         public static final int abs__textfield_searchview_right_holo_light=0x7f02006e;
-        public static final int ic_action_search=0x7f02006f;
-        public static final int ic_launcher=0x7f020070;
-        public static final int layout=0x7f020071;
+        public static final int fail=0x7f02006f;
+        public static final int ic_action_search=0x7f020070;
+        public static final int ic_launcher=0x7f020071;
+        public static final int layout=0x7f020072;
+        public static final int success=0x7f020073;
     }
     public static final class id {
         public static final int abs__action_bar=0x7f040022;
@@ -966,12 +968,14 @@ containing a value of this type.
         public static final int edit_query=0x7f040027;
         public static final int homeAsUp=0x7f040006;
         public static final int listMode=0x7f040002;
-        public static final int loginButton=0x7f040035;
-        public static final int loginPassword=0x7f040034;
-        public static final int loginUsername=0x7f040033;
-        public static final int menu_settings=0x7f040037;
+        public static final int logButton=0x7f040034;
+        public static final int loginButton=0x7f040037;
+        public static final int loginPassword=0x7f040036;
+        public static final int loginUsername=0x7f040035;
+        public static final int menu_settings=0x7f040039;
         public static final int normal=0x7f040001;
-        public static final int pager=0x7f040036;
+        public static final int pButton=0x7f040033;
+        public static final int pager=0x7f040038;
         public static final int showCustom=0x7f040008;
         public static final int showHome=0x7f040005;
         public static final int showTitle=0x7f040007;
@@ -1006,10 +1010,11 @@ containing a value of this type.
         public static final int abs__search_dropdown_item_icons_2line=0x7f030014;
         public static final int abs__search_view=0x7f030015;
         public static final int abs__simple_dropdown_hint=0x7f030016;
-        public static final int activity_screen=0x7f030017;
-        public static final int activity_time_tab=0x7f030018;
-        public static final int sherlock_spinner_dropdown_item=0x7f030019;
-        public static final int sherlock_spinner_item=0x7f03001a;
+        public static final int activity_punch=0x7f030017;
+        public static final int activity_screen=0x7f030018;
+        public static final int activity_time_tab=0x7f030019;
+        public static final int sherlock_spinner_dropdown_item=0x7f03001a;
+        public static final int sherlock_spinner_item=0x7f03001b;
     }
     public static final class menu {
         public static final int activity_screen=0x7f0b0000;
